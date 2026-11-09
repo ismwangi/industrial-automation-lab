@@ -20,7 +20,7 @@ Planned deliverables:
 - Test cases covering normal operation and fault conditions
 - System architecture and HMI concept documentation
 
-**Status:** Planned — implementation and testing have not yet been completed.
+**Status:** Initial design documents and a first PLC function-block implementation are committed. The logic still needs compilation in CODESYS and systematic testing.
 
 ## Repository structure
 
@@ -41,7 +41,7 @@ industrial-automation-lab/
 
 ## Tools and technologies
 
-- CODESYS / IEC 61131-3 Structured Text
+- CODESYS / IEC 61131-3 Structured Text (PLC function block drafted; compilation not yet verified)
 - Python
 - Control systems and instrumentation
 - Git and GitHub for version control and documentation
