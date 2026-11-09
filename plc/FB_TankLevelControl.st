@@ -79,6 +79,7 @@ SystemRunning := RunLatch AND StopCircuitHealthy;
 FillRequest := FALSE;
 
 IF SystemRunning AND LevelSignalValid AND SetpointsValid AND NOT HighHighTrip THEN
+    FillDemand := FALSE;
     IF AutoMode THEN
         (* Hysteresis: start at/below low threshold; stop at/above high. *)
         IF TankLevel_pct <= LowSetpoint_pct THEN
