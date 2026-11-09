@@ -10,21 +10,21 @@ This repository will contain self-directed demonstrations, experiments, and tech
 
 A simulated tank-level control system designed to demonstrate the engineering workflow from requirements to PLC logic and testing.
 
-Planned deliverables:
+Project components:
 
 - Functional description and sequence of operation
 - Digital and analogue I/O list
 - PLC control logic in IEC 61131-3 Structured Text (CODESYS-compatible)
 - Python process simulation for tank filling and draining
 - Alarm handling for low and high tank levels
-- Test cases covering normal operation and fault conditions
+- Automated Python tests covering normal operation and selected fault conditions
 - System architecture and HMI concept documentation
 
-**Status:** Initial design documents, a PLC function block, a Python process/controller reference model, and automated test cases are committed. The Structured Text still needs compilation and testing in CODESYS. The committed Python test suite has not yet been run from a repository checkout.
+**Status:** Initial design documents, a PLC function block, a Python process/controller reference model, automated tests, and a GitHub Actions workflow are committed. The Python workflow is configured for Python 3.11 and 3.12; its first hosted run still needs to be checked. The Structured Text has not yet been compiled in CODESYS.
 
 ## Repository structure
 
-The structure will grow as the project is implemented. The initial target is:
+Current project structure:
 
 ```text
 industrial-automation-lab/
@@ -32,7 +32,7 @@ industrial-automation-lab/
 │   ├── functional-description.md
 │   └── io-mapping.md
 ├── plc/
-│   └── tank_control.st
+│   └── FB_TankLevelControl.st
 ├── simulation/
 │   └── tank_simulation.py
 ├── tests/
@@ -46,7 +46,7 @@ industrial-automation-lab/
 - Control systems and instrumentation
 - Git and GitHub for version control and documentation
 
-Tools will be listed as they are actually used in each project.
+## Automated checks\n\nGitHub Actions is configured to run the Python unit tests on pushes and pull requests targeting `main`, using Python 3.11 and 3.12. It also runs the simulation script as a smoke test. Check the Actions tab for the actual result of the first hosted run.\n\nTools will be listed as they are actually used in each project.
 
 ## Engineering approach
 
