@@ -20,7 +20,7 @@ Planned deliverables:
 - Test cases covering normal operation and fault conditions
 - System architecture and HMI concept documentation
 
-**Status:** Initial design documents and a first PLC function-block implementation are committed. The logic still needs compilation in CODESYS and systematic testing.
+**Status:** Initial design documents, a PLC function block, a Python process/controller reference model, and automated test cases are committed. The Structured Text still needs compilation and testing in CODESYS. The committed Python test suite has not yet been run from a repository checkout.
 
 ## Repository structure
 
