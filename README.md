@@ -1,5 +1,7 @@
 # Industrial Automation Lab
 
+[![Python tests](https://github.com/ismwangi/industrial-automation-lab/actions/workflows/python-tests.yml/badge.svg)](https://github.com/ismwangi/industrial-automation-lab/actions/workflows/python-tests.yml)
+
 A hands-on engineering portfolio documenting practical work and learning in industrial automation, PLC programming, control systems, and engineering simulation.
 
 This repository contains self-directed demonstrations, experiments, and technical documentation. It is separate from any employer or customer projects; no confidential or proprietary material is included.
@@ -18,7 +20,7 @@ A simulated tank-level control system designed to demonstrate the engineering wo
 - Automated Python tests for normal operation and selected fault conditions
 - GitHub Actions workflow for repeatable Python checks
 
-**Status:** Initial design documents, a PLC function block, a Python process/controller reference model, automated tests, and a GitHub Actions workflow are committed. The workflow is configured for Python 3.11 and 3.12, but its first hosted run has not yet been verified. The Structured Text has not yet been compiled in CODESYS.
+**Status:** Initial design documents, a PLC function block, a Python process/controller reference model, automated tests, and a GitHub Actions workflow are committed. All four hosted GitHub Actions runs completed successfully on 9 November 2026; the latest run (#4) tested the then-current main commit. The Structured Text has not yet been compiled in CODESYS.
 
 ## Repository structure
 
@@ -50,7 +52,7 @@ industrial-automation-lab/
 
 ## Automated checks
 
-GitHub Actions is configured to run the Python unit tests on pushes and pull requests targeting `main`, using Python 3.11 and 3.12. It also runs the simulation script as a smoke test. Check the repository's Actions tab for the actual result of the first hosted run.
+GitHub Actions is configured to run the Python unit tests on pushes and pull requests targeting main, using Python 3.11 and 3.12. It also runs the simulation script as a smoke test. [View workflow runs](https://github.com/ismwangi/industrial-automation-lab/actions/workflows/python-tests.yml).
 
 To run the checks locally from the repository root:
 
