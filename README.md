@@ -20,7 +20,7 @@ A simulated tank-level control system designed to demonstrate the engineering wo
 - Automated Python tests for normal operation and selected fault conditions
 - GitHub Actions workflow for repeatable Python checks
 
-**Status:** Initial design documents, a PLC function block, a Python process/controller reference model, automated tests, and a GitHub Actions workflow are committed. Five hosted GitHub Actions runs have completed successfully through 16 November 2026, including the latest run (#5) on both Python 3.11 and 3.12. The Structured Text has not yet been compiled in CODESYS.
+**Status:** Initial design documents, a PLC function block, a Python process/controller reference model, automated tests, and a GitHub Actions workflow are committed. The hosted workflow has passed on both Python 3.11 and 3.12; see the Actions page for the latest run history. The Structured Text has not yet been compiled in CODESYS.
 
 ## Repository structure
 
