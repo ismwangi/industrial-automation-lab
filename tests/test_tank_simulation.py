@@ -64,5 +64,36 @@ class TankControllerTests(unittest.TestCase):
         process.step(False, 10.0)
         self.assertEqual(process.level_pct, 0.0)
 
+    def test_closed_loop_stops_at_high_and_restarts_at_low(self):
+        process = TankProcess(initial_level_pct=20.0)
+        controller = TankLevelController()
+        dt_s = 0.5
+        observed = []
+
+        # Couple the controller scan to the process for a complete fill/drain cycle.
+        for index in range(200):
+            inputs = ControllerInputs(
+                start=(index == 0),
+                level_signal_ma=process.transmitter_current_ma,
+            )
+            outputs = controller.scan(inputs)
+            observed.append((process.level_pct, outputs.pump_run_cmd))
+            process.step(outputs.pump_run_cmd, dt_s=dt_s)
+
+        high_stop_indices = [
+            index for index, (level, pump_cmd) in enumerate(observed)
+            if level >= 80.0 and not pump_cmd
+        ]
+        low_restart_indices = [
+            index for index, (level, pump_cmd) in enumerate(observed)
+            if level <= 30.0 and pump_cmd
+        ]
+
+        self.assertTrue(high_stop_indices, "Pump should stop after reaching the high setpoint.")
+        self.assertTrue(
+            any(index > high_stop_indices[0] for index in low_restart_indices),
+            "Pump should restart after the level falls to the low setpoint.",
+        )
+
 if __name__ == "__main__":
     unittest.main()
